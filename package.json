@@ -1,0 +1,13 @@
+{
+  "name": "Vulspa",
+  "version": "0.0.1",
+  "description": "Destiny raid/dungeon/time-trial tutorial and helper bot capable of responding to voice commands.",
+  "main": "index.js",
+  "script": {
+    "run": "echo \"ADD RUN COMMAND\" && exit 1"
+  },
+  "url": "https://github.com/henhen724/Vulspa",
+  "author": "Henry Hunt",
+  "license": "MIT",
+  "private": false
+}
