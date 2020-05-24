@@ -27,6 +27,10 @@ client.on("message", msg => {
         case "website":
             msg.reply("You can find all my code at https://github.com/henhen724/Vulspa.");
             break;
+        case "help":
+        case "commands":
+            msg.reply("Here's a list of all my commands and what they do: https://github.com/henhen724/Vulspa/blob/master/COMMANDS.md");
+            break;
         default:
             msg.reply("I don't know the command " + argv[0]);
     }
