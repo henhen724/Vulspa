@@ -19,7 +19,12 @@ client.on("message", msg => {
         case "joinfireteam":
         case "joinvoice":
         case "joinvoicechannel":
-            console.log(msg);
+            if (msg.member.voice.channel) {
+                const connection = await msg.member.voice.channel.join();
+            }
+            else {
+                msg.reply("You're not in a voice channel on this server.  Join one and then I'll join.");
+            }
             break;
         case "code":
         case "source":
