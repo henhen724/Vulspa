@@ -1,5 +1,5 @@
 # Config Note
-For security of my personal discord and the bot itself, I have exclude a keys.json file which would be in this folder.  If you are pulling this repo to create your own version of the bot, you need to create a key.json with the following proproties:
+For security of my personal discord and AWS accounts and the bot itself, I have exclude a keys.json file which would be in this folder.  If you are pulling this repo to create your own version of the bot, you need to create a key.json with the following properties:
 * client_id
 * client_secret
     * _You can find both of these inside of the discord developer portal if you click on your app under the general information tab._
