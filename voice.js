@@ -32,6 +32,17 @@ const say = async (connection, voiceMP3File, text) => {
     await new Promise(done => connection.play(voiceMP3File).on('finish', done));
 }
 
+const listen_user = async (connection, user, time) => {
+    const audio = connection.reciever.createStream(user, { mode: 'pcm' });
+    console.log("You ran an unimplimented function: listen");
+    return null;
+}
+
+const listen_channel = async (connection, time) => {
+    console.log("You ran an unimplimented function: listen");
+    return null;
+}
+
 const join = async msg => {
     const connection = await msg.member.voice.channel.join();
     const voiceMP3File = "voice-" + uuid.v4() + ".mp3";

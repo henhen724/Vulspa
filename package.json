@@ -4,7 +4,7 @@
   "description": "Destiny raid/dungeon/time-trial tutorial and helper bot capable of responding to voice commands.",
   "main": "index.js",
   "scripts": {
-    "run": "node index.js"
+    "start": "node index.js"
   },
   "url": "https://github.com/henhen724/Vulspa",
   "author": "Henry Hunt",
