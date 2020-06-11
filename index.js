@@ -1,6 +1,9 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config({ path: "./config/keys.env" })
+}
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const keys = require("./config/keys.json");
+const keys = require("./config/keys");
 process.env.AWS_ACCESS_KEY_ID = keys.aws_access_key_id;
 process.env.AWS_SECRET_ACCESS_KEY = keys.aws_secret_access_key; //Setting enviroment varible for AWS access
 const AWS = require("aws-sdk");
