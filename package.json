@@ -1,5 +1,5 @@
 {
-  "name": "Vulspa",
+  "name": "vulspa",
   "version": "0.0.1",
   "description": "Destiny raid/dungeon/time-trial tutorial and helper bot capable of responding to voice commands.",
   "main": "index.js",
