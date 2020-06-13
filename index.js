@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config({ path: "./config/keys.env" })
+    require('dotenv').config({ path: "./config/keys.env" }) //If you're cloning this repo, delete this line.  This just imports an eviroment varibles file which is only on my computer.
 }
 const Discord = require("discord.js");
 const client = new Discord.Client();
