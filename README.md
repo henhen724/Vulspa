@@ -4,11 +4,11 @@ _[Destiny](https://www.bungie.net/7/en/Destiny/NewLight) raid/dungeon/time-trial
 ## How to clone this repo and create your own version of the bot
 - Install [Git](https://git-scm.com/downloads).
 - Install [node](https://nodejs.org/en/download/).
-- '''sh
+'''sh
 git clone remote https://github.com/henhen724/Vulspa.git
-''' in your bash/cmd line of choice
+'''
 - Navigate to the folder where you cloned the repo and
-- '''sh
+'''sh
 npm init
 '''
 - Goto the index.js file and delete the first three lines, which imports my private enviroment varible in non-production mode.
