@@ -1,0 +1,5 @@
+language: node
+
+node:
+  - 12
+  - node
