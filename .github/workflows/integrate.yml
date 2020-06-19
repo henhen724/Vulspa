@@ -1,0 +1,16 @@
+name: Test Typescript Build
+on: [push]
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+          with:
+            node-version: 12
+      - run: rm -rf /node_modules
+      - run: yarn cache clear
+      - run: yarn install
+      - run: yarn build
+        env:
+          CI: true

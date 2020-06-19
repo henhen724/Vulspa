@@ -1,5 +1,4 @@
-import { Message } from "discord.js";
-import VuslpaClient from "../lib/VulspaClient";
+import { Client, Message } from "discord.js";
 
 interface Command {
     name: string;
@@ -7,7 +6,7 @@ interface Command {
     argmin?: number;
     usage?: string;
     description: string;
-    execute(msg: Message, args: string[], client: VulspaClient): void
+    execute(msg: Message, args: string[], client: Client): void
 }
 
 export default Command

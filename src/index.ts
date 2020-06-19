@@ -1,14 +1,10 @@
-import { Message, Collection } from 'discord.js';
+import { Message } from 'discord.js';
 import VulspaClient from './lib/VulspaClient';
-
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config() //If you're cloning this repo, delete this line.  This just imports an enviroment varibles file which is only on my computer.
+    require('dotenv').config()
 }
 const fs = require("fs");
 const Discord = require("discord.js");
-const keys = require("./config/keys.ts");
-process.env.AWS_ACCESS_KEY_ID = keys.aws_access_key_id;
-process.env.AWS_SECRET_ACCESS_KEY = keys.aws_secret_access_key; //Setting enviroment varible for AWS access
 const AWS = require("aws-sdk");
 
 //Checking AWS access credentials are set
@@ -69,4 +65,4 @@ client.on("message", (msg: Message) => {
     }
 })
 
-client.login(keys.token); //With command handlers ready start connection to discord
+client.login(process.env.DISCORD_TOKEN); //With command handlers ready start connection to discord
