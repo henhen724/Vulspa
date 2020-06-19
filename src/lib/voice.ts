@@ -1,18 +1,17 @@
-const AWS = require("aws-sdk");
-const uuid = require("uuid");
-const fs = require("fs");
+import uuid from "uuid";
+import AWS from "aws-sdk";
 
 const Polly = new AWS.Polly({ region: 'us-east-2' });
 
-const textToMp3 = async (voiceMP3File, text) => {
+const textToMp3 = async (voiceMP3File: string, text: string) => {
     const req = new Promise((accept, reject) => {
-        Polly.synthesizeSpeech({ Text: text, OutputFormat: "mp3", VoiceId: "Brian" }, (err, data) => {
+        Polly.synthesizeSpeech({ Text: text, OutputFormat: "mp3", VoiceId: "Brian" }, (err: Error, data: any) => {
             if (err) {
                 console.log(err.stack);
                 reject(err);
             }
             else if (data.AudioStream instanceof Buffer) {
-                fs.writeFile(voiceMP3File, data.AudioStream, { encoding: "binary" }, err => {
+                fs.writeFile(voiceMP3File, data.AudioStream, { encoding: "binary" }, (err: Error) => {
                     if (err)
                         reject(err)
                     accept({ type: "done", buffer: data.AudioStream })
@@ -27,43 +26,35 @@ const textToMp3 = async (voiceMP3File, text) => {
     const res = await req;
 }
 
-const say = async (connection, voiceMP3File, text) => {
+const say = async (connection: any, voiceMP3File: any, text: string) => {
     await textToMp3(voiceMP3File, text);
     await new Promise(done => connection.play(voiceMP3File).on('finish', done));
 }
 
-const listen_user = async (connection, user, time) => {
+const listen_user = async (connection: any, user: any) => {
     const audio = connection.reciever.createStream(user, { mode: 'pcm' });
     console.log("You ran an unimplimented function: listen");
     return null;
 }
 
-const listen_channel = async (connection, time) => {
+const listen_channel = async (connection: any) => {
     console.log("You ran an unimplimented function: listen");
     return null;
 }
 
-const join = async msg => {
+const join = async (msg: any): Promise<void> => {
     const connection = await msg.member.voice.channel.join();
     const voiceMP3File = "voice-" + uuid.v4() + ".mp3";
     await say(connection, voiceMP3File, "Welcome, Guardian");
     leave(msg.member.voice.channel, voiceMP3File);
 }
 
-const leave = async (voiceChannel, voiceMP3File) => {
-    fs.unlink(voiceMP3File, err => {
+const leave = async (voiceChannel: any, voiceMP3File: any) => {
+    fs.unlink(voiceMP3File, (err: Error) => {
         if (err)
             console.log(err.stack);
     })
     voiceChannel.leave();
 }
 
-const createBucket = async () => {
-    //When the bot joins a channel, its going to create a bucket to store information about the converation and come AWS lambda functions.
-    const bucketName = "Convo-" + uuid.v4();
-    const keyName = msg.member.voice.channelID
-    const data = await new AWS.S3().putObject({ Bucket: bucketName, Key: keyName, Body: "Test message" });
-    console.log("Succesfully uploaded to " + bucketName + "/" + keyName);
-}
-
-module.exports = join;
+export default join;

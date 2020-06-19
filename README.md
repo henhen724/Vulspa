@@ -4,13 +4,13 @@ _[Destiny](https://www.bungie.net/7/en/Destiny/NewLight) raid/dungeon/time-trial
 ## How to clone this repo and create your own version of the bot
 - Install [Git](https://git-scm.com/downloads).
 - Install [node](https://nodejs.org/en/download/).
-'''sh
-git clone remote https://github.com/henhen724/Vulspa.git
-'''
+```sh
+$ git clone https://github.com/henhen724/Vulspa.git
+```
 - Navigate to the folder where you cloned the repo and
-'''sh
-npm init
-'''
+```sh
+$ npm init
+```
 - Goto the index.js file and delete the first three lines, which imports my private enviroment varible in non-production mode.
 - Setup AWS and Discord developer accounts and put your credentials in the [/config/keys.js](/config/keys.js) file. (For more on how to do this, see the [config note](/config/CONFIGNOTE.md).)
 - You will also need to enable Polly, Lex, and Transcribe from the AWS dashboard
