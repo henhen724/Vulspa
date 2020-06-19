@@ -9,7 +9,6 @@ jobs:
         with:
           node-version: 12
       - run: rm -rf /node_modules
-      - run: yarn cache clear
       - run: yarn install
       - run: yarn build
         env:
