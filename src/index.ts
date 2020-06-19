@@ -24,7 +24,11 @@ AWS.config.getCredentials(function (err: Error) {
 const client = new VulspaClient();
 
 // Load all of our command files
-const commandFiles = fs.readdirSync('./src/commands').filter((file: String) => file.endsWith('.ts'));
+var commandFiles = []
+if (process.argv[1].includes('dist'))
+    commandFiles = fs.readdirSync('./dist/commands');
+else
+    commandFiles = fs.readdirSync('./src/commands');
 for (const file in commandFiles) {
     const command = require('./commands/' + commandFiles[file]);
     client.commands.set(command.name, command);
