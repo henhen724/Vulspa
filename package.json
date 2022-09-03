@@ -14,7 +14,7 @@
   "private": false,
   "dependencies": {
     "@discordjs/opus": "^0.8.0",
-    "aws-sdk": "^2.683.0",
+    "aws-sdk": "^2.814.0",
     "discord.js": "^12.2.0",
     "ffmpeg-static": "^4.2.4"
   },
