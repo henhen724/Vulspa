@@ -1,5 +1,5 @@
 # Vulspa
-![Vuslpa Logo](/images/vulspaicon.png)
+![Vulspa Logo](/images/vulspaicon.png)
 _[Destiny](https://www.bungie.net/7/en/Destiny/NewLight) raid/dungeon/time-trial tutorial and helper bot capable of responding to voice commands._
 ## How to clone this repo and create your own version of the bot
 - Install [Git](https://git-scm.com/downloads).

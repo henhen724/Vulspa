@@ -2,7 +2,7 @@ import AWS from "aws-sdk";
 import { SynthesizeSpeechOutput } from "aws-sdk/clients/polly";
 import { Readable, ReadableOptions } from "stream";
 import { VoiceChannel, VoiceConnection } from "discord.js";
-import VuslpaClient from './VulspaClient';
+import VulspaClient from './VulspaClient';
 
 
 class VoiceChannelHandler {
@@ -35,7 +35,7 @@ class VoiceChannelHandler {
                 }
                 else if (data.AudioStream instanceof Buffer) {
                     this.connection!.play(Readable.from(data.AudioStream));
-                    accept();
+                    accept({});
                 }
                 else {
                     console.log(data.AudioStream);

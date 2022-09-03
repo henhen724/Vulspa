@@ -2,7 +2,7 @@ import { Client, Collection } from "discord.js";
 import VoiceChannelHandler from "./VoiceChannelHandler";
 import Command from "../types/command";
 
-class VuslpaClient extends Client {
+class VulspaClient extends Client {
     commands: Collection<string, Command>;
     openVoiceChannels: Collection<string, VoiceChannelHandler>;
     constructor() {
@@ -12,4 +12,4 @@ class VuslpaClient extends Client {
     }
 }
 
-export default VuslpaClient;
+export default VulspaClient;
